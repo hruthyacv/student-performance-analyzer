@@ -1,13 +1,14 @@
 let chart;
 
 function analyze() {
+
   let name = document.getElementById("name").value;
   let s1 = Number(document.getElementById("s1").value);
   let s2 = Number(document.getElementById("s2").value);
   let s3 = Number(document.getElementById("s3").value);
 
-  if (!name || !s1 || !s2 || !s3) {
-    alert("Please fill all fields");
+  if (!name || s1 === 0 && s2 === 0 && s3 === 0) {
+    alert("Please fill all fields correctly");
     return;
   }
 
@@ -43,19 +44,13 @@ function createChart(marks) {
       datasets: [{
         label: "Marks",
         data: marks,
-        backgroundColor: [
-          "#ff6b6b",
-          "#4dabf7",
-          "#51cf66"
-        ],
+        backgroundColor: ["#ff6b6b", "#4dabf7", "#51cf66"],
         borderRadius: 10
       }]
     },
     options: {
       responsive: true,
-      animation: {
-        duration: 1200
-      }
+      animation: { duration: 1000 }
     }
   });
 }
