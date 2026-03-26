@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Analyzer</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>🎓 Student Performance Analyzer</h1>
+
+  <button onclick="toggleTheme()">🌗 Switch Theme</button>
+
+  <div class="card">
+    <input id="name" placeholder="Student Name">
+    <input id="s1" type="number" placeholder="Subject 1 Marks">
+    <input id="s2" type="number" placeholder="Subject 2 Marks">
+    <input id="s3" type="number" placeholder="Subject 3 Marks">
+
+    <button onclick="analyze()">Analyze</button>
+  </div>
+
+  <div id="result" class="card hidden">
+    <h2>📊 Performance Report</h2>
+    <p id="rname"></p>
+    <p id="rtotal"></p>
+    <p id="ravg"></p>
+    <p id="rgrade"></p>
+
+    <canvas id="chart"></canvas>
+  </div>
+</div>
+
+<script src="/static/script.js"></script>
+
+</body>
+</html>
