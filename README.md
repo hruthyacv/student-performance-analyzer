@@ -1,26 +1,25 @@
 # 🎓 Student Performance Analyzer
 
-A full-stack web application to analyze student academic performance using Python (Flask), HTML, CSS, and JavaScript.
+A web-based application to analyze student performance using HTML, CSS, and JavaScript.
 
 ---
 
 ## 🚀 Features
 
-- 📊 Calculate Total, Average, Grade
-- ✅ Pass / Fail Evaluation
-- 📈 Interactive Graph (Chart.js)
-- 💾 Save Results to CSV
-- 🌗 Light / Dark Theme Toggle
-- ⚡ Fast & Responsive UI
+- Calculate total marks and average
+- Assign grades automatically
+- Interactive graph (Chart.js)
+- Light/Dark theme switch
+- Responsive UI
 
 ---
 
 ## 🛠️ Technologies Used
 
-- **Frontend:** HTML, CSS, JavaScript
-- **Backend:** Python (Flask)
-- **Data Storage:** CSV File
-- **Charts:** Chart.js
+- HTML
+- CSS
+- JavaScript
+- Chart.js
 
 ---
 
@@ -30,34 +29,30 @@ A full-stack web application to analyze student academic performance using Pytho
 
 ## 📊 How It Works
 
-1. Enter student name and marks
-2. Click **Analyze**
-3. System calculates:
-   - Total Marks
-   - Average
-   - Grade
-4. Displays results + graph
-5. Saves data into CSV file
+- Enter student name and marks
+- Click "Analyze"
+- View total, average, grade, and graph
 
 ---
 
-## 📈 Grade Logic
+## 📈 Grade Criteria
 
 | Percentage | Grade |
-|-----------|------|
-| ≥ 90      | A+   |
-| ≥ 75      | A    |
-| ≥ 60      | B    |
-| ≥ 50      | C    |
-| < 50      | F    |
+|------------|------|
+| ≥ 90       | A+   |
+| ≥ 75       | A    |
+| ≥ 60       | B    |
+| ≥ 50       | C    |
+| < 50       | F    |
 
 ---
 
-
-## 👨‍💻 Author
+## 👨‍💻 Authors
 
 - HRUTHYA C V  
 
-## 📜 License
+---
 
-This project is for educational purposes.
+## 📜 Note
+
+This project is developed for academic purposes.
