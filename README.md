@@ -2,7 +2,8 @@
 
 A simple project to analyze student marks and calculate performance.
 
----
+🔗 Live Demo:
+https://hruthyacv.github.io/student-performance-analyzer/
 
 ## 🚀 Features
 
