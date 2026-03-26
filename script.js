@@ -1,36 +1,34 @@
 let chart;
 
-async function analyze() {
-  const data = {
-    name: document.getElementById("name").value,
-    s1: document.getElementById("s1").value,
-    s2: document.getElementById("s2").value,
-    s3: document.getElementById("s3").value
-  };
+function analyze() {
+  let name = document.getElementById("name").value;
+  let s1 = Number(document.getElementById("s1").value);
+  let s2 = Number(document.getElementById("s2").value);
+  let s3 = Number(document.getElementById("s3").value);
 
-  if (!data.name || !data.s1 || !data.s2 || !data.s3) {
-    alert("Fill all fields");
+  if (!name || !s1 || !s2 || !s3) {
+    alert("Please fill all fields");
     return;
   }
 
-  const res = await fetch("/analyze", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(data)
-  });
+  let total = s1 + s2 + s3;
+  let avg = total / 3;
 
-  const result = await res.json();
+  let grade;
+  if (avg >= 90) grade = "A+ (Excellent)";
+  else if (avg >= 75) grade = "A (Very Good)";
+  else if (avg >= 60) grade = "B (Good)";
+  else if (avg >= 50) grade = "C (Average)";
+  else grade = "F (Fail)";
 
-  document.getElementById("rname").innerText = "Name: " + result.name;
-  document.getElementById("rtotal").innerText = "Total: " + result.total;
-  document.getElementById("ravg").innerText = "Average: " + result.avg;
-  document.getElementById("rgrade").innerText = "Grade: " + result.grade;
+  document.getElementById("rname").innerText = "Name: " + name;
+  document.getElementById("rtotal").innerText = "Total Marks: " + total;
+  document.getElementById("ravg").innerText = "Average: " + avg.toFixed(2);
+  document.getElementById("rgrade").innerText = "Grade: " + grade;
 
   document.getElementById("result").classList.remove("hidden");
 
-  createChart(result.marks);
+  createChart([s1, s2, s3]);
 }
 
 function createChart(marks) {
@@ -46,9 +44,9 @@ function createChart(marks) {
         label: "Marks",
         data: marks,
         backgroundColor: [
-          "rgba(255, 99, 132, 0.7)",
-          "rgba(54, 162, 235, 0.7)",
-          "rgba(75, 192, 192, 0.7)"
+          "#ff6b6b",
+          "#4dabf7",
+          "#51cf66"
         ],
         borderRadius: 10
       }]
@@ -57,32 +55,11 @@ function createChart(marks) {
       responsive: true,
       animation: {
         duration: 1200
-      },
-      plugins: {
-        legend: {
-          labels: {
-            color: "white"
-          }
-        }
-      },
-      scales: {
-        y: {
-          beginAtZero: true,
-          ticks: {
-            color: "white"
-          }
-        },
-        x: {
-          ticks: {
-            color: "white"
-          }
-        }
       }
     }
   });
 }
 
-// Theme toggle
 function toggleTheme() {
   document.body.classList.toggle("light");
 }
