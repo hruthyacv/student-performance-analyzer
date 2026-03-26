@@ -1,14 +1,13 @@
 let chart;
 
 function analyze() {
-
   let name = document.getElementById("name").value;
   let s1 = Number(document.getElementById("s1").value);
   let s2 = Number(document.getElementById("s2").value);
   let s3 = Number(document.getElementById("s3").value);
 
-  if (!name || s1 === 0 && s2 === 0 && s3 === 0) {
-    alert("Please fill all fields correctly");
+  if (!name || !s1 || !s2 || !s3) {
+    alert("Please fill all fields");
     return;
   }
 
@@ -16,14 +15,14 @@ function analyze() {
   let avg = total / 3;
 
   let grade;
-  if (avg >= 90) grade = "A+ (Excellent)";
-  else if (avg >= 75) grade = "A (Very Good)";
-  else if (avg >= 60) grade = "B (Good)";
-  else if (avg >= 50) grade = "C (Average)";
-  else grade = "F (Fail)";
+  if (avg >= 90) grade = "A+";
+  else if (avg >= 75) grade = "A";
+  else if (avg >= 60) grade = "B";
+  else if (avg >= 50) grade = "C";
+  else grade = "F";
 
   document.getElementById("rname").innerText = "Name: " + name;
-  document.getElementById("rtotal").innerText = "Total Marks: " + total;
+  document.getElementById("rtotal").innerText = "Total: " + total;
   document.getElementById("ravg").innerText = "Average: " + avg.toFixed(2);
   document.getElementById("rgrade").innerText = "Grade: " + grade;
 
@@ -44,13 +43,8 @@ function createChart(marks) {
       datasets: [{
         label: "Marks",
         data: marks,
-        backgroundColor: ["#ff6b6b", "#4dabf7", "#51cf66"],
-        borderRadius: 10
+        backgroundColor: ["#ff6b6b", "#4dabf7", "#51cf66"]
       }]
-    },
-    options: {
-      responsive: true,
-      animation: { duration: 1000 }
     }
   });
 }
