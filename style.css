@@ -9,7 +9,7 @@ body {
 .container {
   width: 320px;
   margin: auto;
-  padding-top: 20px;
+  padding-top: 30px;
 }
 
 .card {
@@ -36,7 +36,6 @@ button {
   background: linear-gradient(135deg, #ff006e, #ffbe0b);
   color: white;
   cursor: pointer;
-  transition: 0.3s;
 }
 
 button:hover {
