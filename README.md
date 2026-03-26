@@ -1,21 +1,22 @@
 # 🎓 Student Performance Analyzer
 
-A web-based application to analyze student performance using HTML, CSS, and JavaScript.
+A simple project to analyze student marks and calculate performance.
 
 ---
 
 ## 🚀 Features
 
-- Calculate total marks and average
-- Assign grades automatically
-- Interactive graph (Chart.js)
-- Light/Dark theme switch
-- Responsive UI
+- Calculate total and average
+- Assign grade automatically
+- Display graph using Chart.js
+- Light/Dark theme toggle
+- Simple Python version included
 
 ---
 
 ## 🛠️ Technologies Used
 
+- Python
 - HTML
 - CSS
 - JavaScript
@@ -23,19 +24,7 @@ A web-based application to analyze student performance using HTML, CSS, and Java
 
 ---
 
-## 📂 Project Structure
-
----
-
-## 📊 How It Works
-
-- Enter student name and marks
-- Click "Analyze"
-- View total, average, grade, and graph
-
----
-
-## 📈 Grade Criteria
+## 📊 Grade Criteria
 
 | Percentage | Grade |
 |------------|------|
@@ -50,9 +39,9 @@ A web-based application to analyze student performance using HTML, CSS, and Java
 ## 👨‍💻 Authors
 
 - HRUTHYA C V  
-
+  
 ---
 
 ## 📜 Note
 
-This project is developed for academic purposes.
+This project is for academic and learning purposes.
