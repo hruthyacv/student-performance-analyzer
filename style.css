@@ -3,6 +3,7 @@ body {
   background: linear-gradient(135deg, #1e1e2f, #3a0ca3);
   color: white;
   text-align: center;
+  transition: 0.3s;
 }
 
 .container {
@@ -36,8 +37,19 @@ button {
   cursor: pointer;
 }
 
+button:hover {
+  transform: scale(1.05);
+}
+
 .hidden {
   display: none;
+}
+
+/* Message styling */
+#rmessage {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #ffbe0b;
 }
 
 /* Light mode */
