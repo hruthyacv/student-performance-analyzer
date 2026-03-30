@@ -15,16 +15,34 @@ function analyze() {
   let avg = total / 3;
 
   let grade;
-  if (avg >= 90) grade = "A+";
-  else if (avg >= 75) grade = "A";
-  else if (avg >= 60) grade = "B";
-  else if (avg >= 50) grade = "C";
-  else grade = "F";
+  let message;
+
+  if (avg >= 90) {
+    grade = "A+";
+    message = "Outstanding! Keep it up! 🌟";
+  } 
+  else if (avg >= 75) {
+    grade = "A";
+    message = "Great job! You're doing really well! 👍";
+  } 
+  else if (avg >= 60) {
+    grade = "B";
+    message = "Good effort! Keep improving! 💪";
+  } 
+  else if (avg >= 50) {
+    grade = "C";
+    message = "You can do better! Stay consistent! 📘";
+  } 
+  else {
+    grade = "F";
+    message = "Don't give up! Work harder and try again! 🔥";
+  }
 
   document.getElementById("rname").innerText = "Name: " + name;
-  document.getElementById("rtotal").innerText = "Total: " + total;
+  document.getElementById("rtotal").innerText = "Total Marks: " + total;
   document.getElementById("ravg").innerText = "Average: " + avg.toFixed(2);
   document.getElementById("rgrade").innerText = "Grade: " + grade;
+  document.getElementById("rmessage").innerText = message;
 
   document.getElementById("result").classList.remove("hidden");
 
@@ -43,8 +61,13 @@ function createChart(marks) {
       datasets: [{
         label: "Marks",
         data: marks,
-        backgroundColor: ["#ff6b6b", "#4dabf7", "#51cf66"]
+        backgroundColor: ["#ff6b6b", "#4dabf7", "#51cf66"],
+        borderRadius: 10
       }]
+    },
+    options: {
+      responsive: true,
+      animation: { duration: 1000 }
     }
   });
 }
